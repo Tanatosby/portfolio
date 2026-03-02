@@ -1,0 +1,137 @@
+/* =========================
+   BASIC RESET (clean base)
+   ========================= */
+* {
+  box-sizing: border-box; /* Keeps padding/border inside element width */
+}
+
+body {
+  margin: 0; /* Removes default browser spacing */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* Modern, readable font */
+  color: #111827; /* Deep gray text for comfort */
+  background: #ffffff; /* Clean white background */
+  line-height: 1.5; /* Better readability */
+}
+
+/* =========================
+   HERO SECTION (layout shell)
+   ========================= */
+.hero {
+  padding: 72px 20px; /* Spacious top/bottom with small side padding */
+  background: #ffffff; /* Minimalist: keep background clean */
+}
+
+/* Container centers content and limits width */
+.hero__container {
+  max-width: 1100px; /* Prevents content from stretching too wide */
+  margin: 0 auto; /* Centers the container */
+  display: grid; /* Enables responsive two-column layout */
+  grid-template-columns: 1.2fr 0.8fr; /* Text slightly wider than image */
+  gap: 40px; /* Space between text and image */
+  align-items: center; /* Vertically aligns items nicely */
+}
+
+/* =========================
+   TEXT STYLES (typography)
+   ========================= */
+.hero__subheader {
+  margin: 0 0 12px; /* Small spacing below */
+  color: #6b7280; /* Soft gray for secondary text */
+  font-size: 14px; /* Subtle, not competing with title */
+  letter-spacing: 0.04em; /* Adds a refined feel */
+  text-transform: uppercase; /* Clean “label” style */
+}
+
+.hero__title {
+  margin: 0 0 10px; /* Tight spacing for modern look */
+  font-size: clamp(36px, 4vw, 56px); /* Responsive title size */
+  line-height: 1.05; /* Compact headline spacing */
+  letter-spacing: -0.02em; /* Slightly tighter for elegance */
+}
+
+.hero__headline {
+  margin: 0 0 16px; /* Spacing before description */
+  font-size: clamp(18px, 2.2vw, 24px); /* Responsive sub-headline size */
+  font-weight: 600; /* Strong but not too heavy */
+  color: #111827; /* Same main text color */
+}
+
+.hero__description {
+  margin: 0 0 24px; /* Space before buttons */
+  max-width: 52ch; /* Comfortable line length for reading */
+  color: #374151; /* Slightly lighter than main text */
+  font-size: 16px; /* Standard paragraph size */
+}
+
+/* =========================
+   BUTTONS (call to action)
+   ========================= */
+.hero__actions {
+  display: flex; /* Places buttons side-by-side */
+  gap: 12px; /* Space between buttons */
+  flex-wrap: wrap; /* Wraps buttons on small screens */
+}
+
+.btn {
+  display: inline-flex; /* Better alignment for text */
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  padding: 12px 16px; /* Comfortable button size */
+  border-radius: 12px; /* Soft modern corners */
+  text-decoration: none; /* Removes underline */
+  font-weight: 600; /* Makes button text clear */
+  border: 1px solid transparent; /* Keeps layout stable */
+  transition: transform 0.12s ease, opacity 0.12s ease; /* Small, tasteful interaction */
+}
+
+.btn:active {
+  transform: translateY(1px); /* Subtle press effect */
+}
+
+/* Primary button (main action) */
+.btn--primary {
+  background: #111827; /* Dark neutral for elegance */
+  color: #ffffff; /* High contrast text */
+}
+
+/* Secondary button (optional action) */
+.btn--ghost {
+  background: transparent; /* Minimal style */
+  color: #111827; /* Matches primary text color */
+  border-color: #e5e7eb; /* Light border for definition */
+}
+
+.btn:hover {
+  opacity: 0.92; /* Small hover feedback */
+}
+
+/* =========================
+   IMAGE (profile photo)
+   ========================= */
+.hero__media {
+  display: flex; /* Helps center image nicely */
+  justify-content: center; /* Centers horizontally */
+}
+
+.hero__photo {
+  width: min(300px, 100%); /* Responsive image width */
+  aspect-ratio: 1 / 1; /* Perfect square portrait crop */
+  object-fit: cover; /* Prevents stretching; crops nicely */
+  border-radius: 50%; /* Elegant rounded image */
+  border: 1px solid #f3f4f6; /* Soft outline */
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08); /* Gentle depth */
+}
+
+/* =========================
+   RESPONSIVE (mobile layout)
+   ========================= */
+@media (max-width: 900px) {
+  .hero__container {
+    grid-template-columns: 1fr; /* Stacks text and image */
+    gap: 28px; /* Slightly smaller spacing */
+  }
+
+  .hero__media {
+    justify-content: flex-start; /* Align image with text on mobile */
+  }
+}
